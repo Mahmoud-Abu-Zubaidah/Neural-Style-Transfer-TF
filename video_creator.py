@@ -6,7 +6,7 @@ import zipfile
 import shutil
 
 # Directory zip files 
-base = "D:/NST/panda"
+base = ""# Base here
 secondary = base+'/images'
 
 def extract_all(last_img=''):
@@ -62,7 +62,7 @@ def create_video(video_name = 'result.mp4'):
 
 
 
-# if __name__ == '__main__':
-#   extract_all()
-#   create_video()
-#   reset()
+if __name__ == '__main__':
+  extract_all()
+  create_video()
+  reset()

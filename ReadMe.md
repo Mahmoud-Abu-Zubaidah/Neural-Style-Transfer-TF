@@ -5,13 +5,14 @@ This repository provides an implementation of **Neural Style Transfer (NST)**, a
 The repository includes the core functionality for performing Neural Style Transfer, as well as a tool to visualize the evolution of the style transfer process over time.
 
 ## Table of Contents
-- [What is Neural Style Transfer?](#what-is-neural-style-transfer)
-- [Files](#files)
-  - [main.py](#mainpy)
-  - [video_creator.py](#video_creatorpy)
-- [Images and Videos](#images-and-videos)
-- [How to Run](#how-to-run)
-- [License](#license)
+- [Neural Style Transfer (NST) Implementation](#neural-style-transfer-nst-implementation)
+  - [Table of Contents](#table-of-contents)
+  - [What is Neural Style Transfer?](#what-is-neural-style-transfer)
+  - [Files](#files)
+    - [`main.py`](#mainpy)
+    - [`video_creator.py`](#video_creatorpy)
+    - [`analysisperformance`](#analysisperformance)
+  - [Images and Videos](#images-and-videos)
 
 ## What is Neural Style Transfer?
 
@@ -29,34 +30,26 @@ The result is a new image that represents a harmonious blend of content and styl
 ### `main.py`
 `main.py` contains the main implementation of the Neural Style Transfer algorithm. It includes functions for:
 - Loading and preprocessing images.
-- Extracting content and style features using a pre-trained CNN (usually VGG19).
+- Extracting content and style features using a pre-trained CNN **SOTA** model (VGG19).
 - Implementing the optimization loop to minimize content and style loss, thereby generating the output image.
 
 ### `video_creator.py`
 `video_creator.py` contains a function that allows you to create a video from a series of images. This is useful for tracking the progress of the style transfer during training. The video can show the gradual transformation from the initial content image to the final stylized output.
 
+### `analysisperformance`
+The `analysis_performance.py` script manages Neural Style Transfer (NST) data by extracting .zip files, and find epoch and cost details from image name as stored. Then visualize the cost during epochs in a line plot then saved as epoch_cost_plot.png
+
+
 ## Images and Videos
 
-The repository contains a set of images used for different experiments to demonstrate the effectiveness of Neural Style Transfer. Below are the content and style images used for the experiments:
+The repository contains a set of images used for different experiments to demonstrate the effectiveness of Neural Style Transfer. And this is just a sample:
 
-- **Content Image**: ![content_image](path/to/content_image.jpg)
-- **Style Image**: ![style_image](path/to/style_image.jpg)
+- **Content Image**: ![content_image](images/content/Al Aqsa Mosque.jpg)
+  
+- **Style Image**: ![style_image](images/Generated/image-100000-Cost_2.5752086639404297.jpg)
 
 Additionally, we have a video that tracks the changes during the style transfer process. You can watch the video here:
 
-- **Style Transfer Progress Video**: ![style_transfer_video](path/to/progress_video.mp4)
+- **Style Transfer Progress Video**: ![style_transfer_video](images/Generated/result.mp4)
 
 These images and videos are meant to help you visualize how the NST process works and how the content and style gradually merge over the course of training.
-
-## How to Run
-
-### Prerequisites
-Ensure you have the following libraries installed:
-- Python 3.x
-- TensorFlow or PyTorch (depending on your implementation)
-- NumPy
-- OpenCV (for video creation)
-
-You can install the necessary dependencies using `pip`:
-```bash
-pip install tensorflow numpy opencv-python

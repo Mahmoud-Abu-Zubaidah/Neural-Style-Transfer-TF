@@ -49,15 +49,11 @@ def compute_content_cost(content_output, generated_output):
     a_C = content_output[-1]
     a_G = generated_output[-1]
 
-    # Retrieve dimensions from a_G (≈1 line)
     _, n_H, n_W, n_C = a_C.shape
 
-    # Reshape 'a_C' and 'a_G' (≈2 lines)
-    # DO NOT reshape 'content_output' or 'generated_output'
     a_C_unrolled = tf.transpose(tf.reshape(a_C, shape=[_, -1, n_C]))
     a_G_unrolled = tf.transpose(tf.reshape(a_G, shape=[_, -1, n_C]))
 
-    # compute the cost with tensorflow
     J_content = (1 / (4 * n_H * n_W * n_C)) * tf.reduce_sum(tf.square(tf.subtract(a_C_unrolled, a_G_unrolled)))
 
     return J_content
@@ -84,18 +80,18 @@ def compute_layer_style_cost(a_S, a_G):
     J_style_layer -- tensor representing a scalar value, style cost defined above by equation (2)
     """
 
-    # Retrieve dimensions from a_G (≈1 line)
+    # Retrieve dimensions from a_G
     m, n_H, n_W, n_C = a_G.get_shape().as_list()
 
-    # Reshape the images from (n_H * n_W, n_C) to have them of shape (n_C, n_H * n_W) (≈2 lines)
+    # Reshape the images from (n_H * n_W, n_C) to have them of shape (n_C, n_H * n_W)
     a_S = tf.transpose(tf.reshape(a_S, shape=[-1, n_C]))
     a_G = tf.transpose(tf.reshape(a_G, shape=[-1, n_C]))
 
-    # Computing gram_matrices for both images S and G (≈2 lines)
+    # Computing gram_matrices for both images S and G
     GS = gram_matrix(a_S)
     GG = gram_matrix(a_G)
 
-    # Computing the loss (≈1 line)
+    # Computing the loss
     J_style_layer = (1 / (4 * n_C **2 * (n_H * n_W) **2)) * tf.reduce_sum(tf.square(tf.subtract(GS, GG)))
 
     return J_style_layer
@@ -193,23 +189,6 @@ def compute_style_cost(style_image_output, generated_image_output, STYLE_LAYERS=
 
     return J_style
 
-@tf.function()
-def total_cost(J_content, J_style, alpha = 10, beta = 40):
-    """
-    Computes the total cost function
-
-    Arguments:
-    J_content -- content cost coded above
-    J_style -- style cost coded above
-    alpha -- hyperparameter weighting the importance of the content cost
-    beta -- hyperparameter weighting the importance of the style cost
-
-    Returns:
-    J -- total cost as defined by the formula above.
-    """
-    J = alpha * J_content + beta * J_style
-
-    return J
 
 
 
