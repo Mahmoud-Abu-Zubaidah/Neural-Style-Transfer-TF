@@ -44,12 +44,21 @@ The `analysis_performance.py` script manages Neural Style Transfer (NST) data by
 
 The repository contains a set of images used for different experiments to demonstrate the effectiveness of Neural Style Transfer. And this is just a sample:
 
-- **Content Image**: ![content_image](images/content/Al Aqsa Mosque.jpg)
+- **Content Image**:
+
+<img src="images/content/Al Aqsa Mosque.jpg" width="500" height = "500" />
+
+
   
-- **Style Image**: ![style_image](images/Generated/image-100000-Cost_2.5752086639404297.jpg)
+- **Style Image**:
+
+<img src="images/Generated/image-100000-Cost_2.5752086639404297.jpg" width="500" height = "500" />
 
 Additionally, we have a video that tracks the changes during the style transfer process. You can watch the video here:
 
-- **Style Transfer Progress Video**: ![style_transfer_video](images/Generated/result.mp4)
+- **Style Transfer Progress Video**:
+  <video width="600" controls>
+  <source src="images/Generated/result.mp4" type="video/mp4">
+</video>
 
 These images and videos are meant to help you visualize how the NST process works and how the content and style gradually merge over the course of training.
