@@ -62,3 +62,13 @@ Additionally, we have a video that tracks the changes during the style transfer 
 
 
 These images and videos are meant to help you visualize how the NST process works and how the content and style gradually merge over the course of training.
+
+## More Examples:
+
+<img src="images/Generated/image-100000-Cost_0.4218103587627411.jpg" width="400" height = "400" /><img src="images/Generated/image-100000-Cost_36.55413818359375.jpg" width="400" height = "400" />
+<img src="images/Generated/image-100000-Cost_0.6983593106269836.jpg" width="400" height = "400" />
+<img src="images/Generated/image-100000-Cost_0.7394014596939087.jpg" width="400" height = "400" />
+<img src="images/Generated/image-100000-Cost_1.155078411102295.jpg" width="400" height = "400" />
+<img src="images/Generated/image-100000-Cost_1.685089111328125.jpg" width="400" height = "400" />
+
+
