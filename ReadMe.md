@@ -58,7 +58,7 @@ Additionally, we have a video that tracks the changes during the style transfer 
 
 - **Style Transfer Progress Video**:
 
-![Progress](images/Generated/result.gif)
+![Progress](images/Generated/result.gif)<img src="images/Generated/epoch_cost_plot.png" width="500" height = "400" />
 
 
 These images and videos are meant to help you visualize how the NST process works and how the content and style gradually merge over the course of training.
