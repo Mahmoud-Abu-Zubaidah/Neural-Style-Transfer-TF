@@ -57,8 +57,8 @@ The repository contains a set of images used for different experiments to demons
 Additionally, we have a video that tracks the changes during the style transfer process. You can watch the video here:
 
 - **Style Transfer Progress Video**:
-  <video width="600" controls>
-  <source src="images/Generated/result.mp4" type="video/mp4">
-</video>
+
+![Progress](images/Generated/result.gif)
+
 
 These images and videos are meant to help you visualize how the NST process works and how the content and style gradually merge over the course of training.
